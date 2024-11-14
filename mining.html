@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mining</title>
+
+    <style>
+        /* CRITICAL CSS for the webpage load */
+
+        /* Style the top header */
+
+        header {
+            background-color: #333;
+            color: #F2F2F2;
+        }
+
+        /* Move title of page to right to align with nav */
+
+        h1 {
+            padding-left: 14px;
+        }
+
+        /* Body background color and sizing */
+
+        body {
+            background-color: #251111;
+            width: 99%;
+        }
+
+        /*Allow headers for accessibility but make them invisible*/
+
+        .invisible {
+            display: none;
+        }
+
+        /* Add a black background to the top navigation */
+
+        .topnav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        /*Style the links inside the navigation bar */
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #F2F2F2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        /* Change the color of link on hover */
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Add color to the active/current link */
+
+        .topnav a.active {
+            background-color: #A7F0F9;
+            color: #333;
+        }
+
+        /* Encompass all icons and is the wrapper to the flex box */
+
+        #Main {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            align-items: stretch;
+
+            width: 100%;
+            height: 100%;
+
+            margin-top: 10px;
+            border-radius: 13px;
+            background-color: #251021;
+        }
+
+        /* container for each shop */
+
+        .itemshops {
+            flex: 1;
+            max-width: calc(99%/19);
+            margin: 10px 4px 10px 4px;
+        }
+
+        /* Shop Icon */
+
+        .shopimg {
+            flex: 1;
+            object-fit: scale-down;
+            max-width: 100%;
+            border: 3px solid #F0BA17;
+            border-radius: 13px;
+
+        }
+
+        /* Dropdown Button */
+
+        .dropbtn,
+        .dropbtnrecipe {
+            flex: 1;
+            max-width: 80%;
+            max-height: 10%;
+            border: none;
+            margin-left: 2px;
+        }
+
+        /* Icon of button */
+
+        .buttonimg {
+            flex: 1;
+            max-width: 100%;
+            border-radius: 13px;
+            line-height: 0;
+            vertical-align: top;
+        }
+
+        /* Button icon on hover */
+
+        .buttonimg:hover,
+        .shopimg:hover {
+            box-shadow: 0px 5px 5px 0px rgba(2, 200, 240, 0.5);
+        }
+
+        /* Remove default HTML button styling */
+
+        button {
+            padding: 0px;
+            border: none;
+            border-radius: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="mining">Mining</h1>
+        <nav>
+            <div class="topnav" id="myTopnav">
+                <a href="index.html">Items</a>
+                <a href="heroes.html">Heroes</a>
+                <a href="openvpn.html">VPN</a>
+                <a class="active" href="mining.html">Mining</a>
+                <a href="ubuntu.html">Ubuntu</a>
+                <a href="about.html">About</a>
+            </div>
+        </nav>
+    </header>
+    <section id="Main">
+        <h2 class="invisible">Main</h2>
+        <div class="itemshops">
+            <!--1:1 Aerogun Miner "aeminer"-->
+            <div class="dropdown" id="aeminerstats">
+                <button class="dropbtn" id="btnaeminer"><img class="buttonimg" src="items/aerogun.jpg" alt="aerogun icon"></button>
+                <div class="dropdown-content">
+                    Aerogun
+                    <p>GPUs<br>
+                        <span class="shop">EVGA GTX 970 SSC ACX 2.0<br>
+                        MSI GTX 970 Gaming 4G Golden Edition<br>
+                        MSI GTX 970 Gaming 4G</span>
+                    </p>
+                    <p>Processor<br>
+                        <span class="shop">AMD FX-8120 8-Core 3.1 GHz</span></p>
+                    <p>Motherboard<br>
+                        <span class="shop">GIGABYTE GA-970A-D3 rev1.1</span></p>
+                    <p>Ram<br>
+                        <span class="shop">Corsair Vengance 4GB DDR3 1600 MHz 9-9-9-24 1.5V</span></p>
+                    <p>Storage<br>
+                        <span class="shop">Intel X25-M 80 GB, 2.5", SATA 3Gb/s, 34nm, MLC, SSDSA2M080G2GC</span></p>
+                    <p>Powersupplies<br>
+                        <span class="shop">SeaSonic Focus SSR-750FM 750W 80+ Gold, Semi-Modular, ATX12V/EPS12V, Compact 140mm, 7 yr warranty<br>
+                            EVGA 850 BQ, 850W 80+ Bronze, Semi-Modular, 110-BQ-0850-RX</span>
+                    </p>
+
+                </div>
+            </div>
+            <!-- For modal box - item recipie -->
+            <div class="modal" id="modalaeminer">
+                <!--Modal content-->
+                <div class="modal-content">
+                    <span class="modal-item-name">Aerogun</span>
+                    <div class="recipe">
+                        <!--Items can make from-->
+                        <div class="top" id="mootshirtmoomootshirt">
+                            <!-- Moo Moo T-shirt appended here with js-->
+                        </div>
+                        <br>
+                        <!--Item-->
+                        <div class="mid" id="aeminer">
+                            <iframe src="https://www.nicehash.com/miner/3ChK8prJUQGyxCD2SJjyc9QWvyqxZb1Fks"></iframe>
+                        </div>
+                        <br>
+                        <!--Items needed to make-->
+                        <div class="bottom" id="mootshirtbottom">
+
+                        </div>
+                        <!--Items needed to make-->
+                        <div class="text">
+                            <p>Have all items in inventory and sell <img class="tpix" src="items/mithril-shirt.jpg" alt="mithril shirt"> to shop</p>
+                            <p class="cost">Total Cost <img src="items/gold.jpg" alt="gold coin image"><span class="gold">8600</span> (<span class="gold">300</span> returned)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!--1:2 Mask of Madness Miner "momminer"-->
+            <div class="dropdown" id="momminerstats">
+                <button class="dropbtn" id="btnmomminer"><img class="buttonimg" src="items/maskofmadness.jpg" alt="mask of madness icon"></button>
+                <div class="dropdown-content">
+                    Mask of Madness
+                    <p>GPUs<br>
+                        <span class="shop">Sapphire Nitro Radeon R9 Fury<br>
+                        Sapphire Nitro Radeon R9 Fury<br>
+                        XFX R9 Fury<br>
+                        AMD Radeon R9 Fury X</span>
+                    </p>
+                    <p>Processor<br>
+                        <span class="shop">Intel Core i5 3350P 3.3 GHz</span></p>
+                    <p>Motherboard<br>
+                        <span class="shop">ASUS P8Z77-V LE Plus</span></p>
+                    <p>Ram<br>
+                        <span class="shop">Corsair Vengance 4GB DDR3 1600 MHz 9-9-9-24 1.5V</span></p>
+                    <p>Storage<br>
+                        <span class="shop">Intel SSD 530 180 GB, 2.5", SATA 6Gb/s, 20nm, MLC, SSDSC2BW180A4</span></p>
+                    <p>Powersupplies<br>
+                        <span class="shop">Rosewill Gaming 80+ Bronze 750W<br>
+                            EVGA 750 BQ, 80+ Bronze 750W, Semi-Modular, 110-BQ-0750-V1</span>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <link rel="stylesheet" type="text/css" href="noncriticalmining.css">
+    <script>
+        "use strict";
+        var document;
+        var window;
+
+        //Commented Items are left for future changes/modifications in the final product
+
+        //Get the modal
+        //var modalaeminer = document.getElementById('modalaeminer');
+        //Get the button that opens the modal
+        var btnaeminer = document.getElementById('btnaeminer');
+        //When user clicks on the button, open the modal
+        btnaeminer.onclick = function() {
+            //location.href = "https://www.nicehash.com/miner/3ChK8prJUQGyxCD2SJjyc9QWvyqxZb1Fks"
+            window.open("https://www.nicehash.com/miner/3ChK8prJUQGyxCD2SJjyc9QWvyqxZb1Fks")
+            //modalaeminer.style.display = "block";
+        };
+
+        var btnmomminer = document.getElementById('btnmomminer');
+        btnmomminer.onclick = function() {
+            window.open("https://www.nicehash.com/miner/3KRTLE6yq8e98C2CVr6ektsWwRBYfeLNxa")
+        };
+
+    </script>
+</body>
+
+</html>

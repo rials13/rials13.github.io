@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Moo Moo Item Library">
+    <meta name="keywords" content="Moo Moo,Moo,Warcraft,III,3,items,library,recipie,custom,scenario">
+    <meta name="author" content="Riley">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#251111">
+    <!--Open Graph Properties-->
+    <meta name="og:title" content="Moo Moo Items">
+    <meta property="og:type" content="The type" />
+    <meta property="og:url" content="https://earthbind.net/" />
+    <meta property="og:image" content="https://earthbind.net/moomoo.jpg" />
+    <title>Moo Moo Items</title>
+    <link rel="shortcut icon" type="image" href="favicon2.png">
+    <style>
+        body {
+            background-image: url('background.jpg');
+            height: 100vh;
+            overflow-y: scroll;
+            background-position: center;
+        }
+
+        #flexContainer {
+            display: flex;
+            flex-direction: row;
+            background: rgba(51, 153, 102, 50%);
+            margin: 5%;
+            border-radius: 15px;
+            box-shadow: 3px 3px 2px 2px #0f0f0f;
+        }
+
+        .flexCol {
+            flex: 1;
+            max-width: 84px;
+            height: 100%;
+            padding: 5px;
+        }
+
+        .flexColMap {
+            flex: 1;
+            max-width: 235px;
+            height: 100%;
+            padding: 5px;
+        }
+
+        .item {
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+            border-radius: 13px;
+            background-size: 100%;
+        }
+
+        .shopImg {
+            border: 3px solid #F0BA17;
+            background-position: 0 0;
+            margin-left: -2px;
+        }
+
+        .secrets {
+            flex: 1;
+            background-image: url('secrets.png');
+        }
+
+        .quest {
+            background-image: url('quest.png');
+        }
+
+        .mapitems {
+            background-image: url('mapitems.png');
+        }
+
+        .tinkers {
+            background-image: url('tinkers.png');
+        }
+
+        .magni {
+            background-image: url('magni.png');
+        }
+
+        .mage {
+            background-image: url('mage.png');
+        }
+
+        .overlord {
+            background-image: url('overlord.png');
+        }
+
+        .one {
+            background-position: 50% calc(100%/18);
+        }
+
+        .two {
+            background-position: 100% calc(2*100%/18);
+        }
+
+        .three {
+            background-position: 100% calc(3*100%/18);
+        }
+
+        .four {
+            background-position: 100% calc(4*100%/18);
+        }
+
+        .five {
+            background-position: 100% calc(5*100%/18);
+        }
+
+        .six {
+            background-position: 100% calc(6*100%/18);
+        }
+
+        .seven {
+            background-position: 100% calc(7*100%/18);
+        }
+
+        .eight {
+            background-position: 100% calc(8*100%/18);
+        }
+
+        .nine {
+            background-position: 100% calc(9*100%/18);
+        }
+
+        .ten {
+            background-position: 100% calc(10*100%/18);
+        }
+
+        .eleven {
+            background-position: 100% calc(11*100%/18);
+        }
+
+        .twelve {
+            background-position: 100% calc(12*100%/18);
+        }
+
+        .thirteen {
+            background-position: 100% calc(13*100%/18);
+        }
+
+        .fourteen {
+            background-position: 100% calc(14*100%/18);
+        }
+
+        .fifteen {
+            background-position: 100% calc(15*100%/18);
+        }
+
+        .sixteen {
+            background-position: 100% calc(16*100%/18);
+        }
+
+        .seventeen {
+            background-position: 100% calc(17*100%/18);
+        }
+
+        .eighteen {
+            background-position: 100% calc(18*100%/18);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2E3535;
+            border: 1px solid #F0BA17;
+            border-radius: 10px;
+            box-shadow: 3px 3px 2px 3px #0f0f0f;
+            min-width: 300px;
+            z-index: 1;
+            font-family: "veranda";
+            font-size: 1em;
+            color: #fff;
+            text-align: left;
+            padding-left: 5px;
+            padding-top: 5px;
+        }
+
+        .t {
+            top: -75%;
+        }
+
+        .b {
+            bottom: 0%
+        }
+
+        .l {
+            left: 100%;
+        }
+
+        .r {
+            right: 100%;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .map {
+            flex: 1;
+            max-width: 100%;
+            border-radius: 13px;
+        }
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            /*background-color: rgb(0, 0, 0);*/
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+            -webkit-animation-name: fadeIn;
+            /* Fade in the background */
+            -webkit-animation-duration: 0.4s;
+            animation-name: fadeIn;
+            animation-duration: 0.4s
+        }
+
+        /* Modal Content */
+
+        .modal-content {
+            position: fixed;
+            bottom: 0;
+            left: 25vw;
+            background-color: #2E3535;
+            border: 1px solid #F0BA17;
+            border-style: groove;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 4px #0f0f0f;
+            font-family: "Veranda";
+            font-size: 1em;
+            color: #fff;
+            text-align: left;
+            padding-left: 5px;
+            padding-top: 5px;
+            width: 50vw;
+            min-height: 25vh;
+            -webkit-animation-name: slideIn;
+            -webkit-animation-duration: 0.4s;
+            animation-name: slideIn;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation to Modal fade in */
+
+        @-webkit-keyframes slideIn {
+            from {
+                bottom: -300px;
+                opacity: 0
+            }
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                bottom: -300px;
+                opacity: 0
+            }
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        .top,
+        .mid,
+        .bottom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 30px;
+            font-family: "Veranda";
+            font-size: 1.2em;
+            color: #fff;
+            text-align: center;
+        }
+
+        /*Colors:*/
+
+        .black {
+            color: #000000;
+        }
+
+        .gold,
+        .lclick,
+        .souls,
+        .ill {
+            color: #FED312;
+        }
+
+        .shop {
+            color: #808080;
+        }
+
+        .info {
+            color: #626262;
+        }
+
+        .damage,
+        .damagereturn {
+            color: #FF4646;
+        }
+
+        .armor {
+            color: #BAB780;
+        }
+
+        .allstats,
+        .attackspd,
+        .enchdmg,
+        .active,
+        .passive,
+        .buffs,
+        .movespd,
+        .evasion,
+        .cleave,
+        .crit,
+        .chance,
+        .enemy,
+        .resist,
+        .lifeabsorb,
+        .lifereturn,
+        .notes {
+            color: #9ACBD6;
+        }
+
+        .plusstats,
+        .mstun,
+        .lifereturn2,
+        .manareturn2 {
+            color: #E68E35;
+        }
+
+        .str {
+            color: #CC8394;
+        }
+
+        .agi {
+            color: #ACE8B5;
+        }
+
+        .int {
+            color: #1A7BE2;
+        }
+
+        .lifebonus,
+        .hp,
+        .regen {
+            color: #CDE672;
+        }
+
+        .manaregen,
+        .mp {
+            color: #BAA2E0;
+        }
+
+        .cooldown,
+        .mana,
+        .soul,
+        .stackrep {
+            color: #67B5C5;
+        }
+
+        .cooldown1 {
+            color: #6E6F9B;
+        }
+
+        .lifesteal {
+            color: #F5B0F1;
+        }
+
+        .nostack,
+        .note,
+        .dd {
+            color: #FF0303;
+        }
+
+        .lvlup {
+            color: #39CC1B;
+        }
+
+        .regenrune,
+        .haste {
+            color: #11149F;
+        }
+
+        .tpix {
+            width: 30px;
+            border-radius: 3px;
+        }
+
+        .mname {
+            color: #fff;
+            font-size: 2em;
+        }
+
+        .cost {
+            color: #fff;
+            font-size: 1em;
+            float: left;
+        }
+
+        .wave {
+            font-size: 1.2em;
+            color: aqua;
+            font-style: italic;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script src="itemlist.js"></script>
+</head>
+
+<body>
+    <div id="flexContainer">
+
+    </div>
+</body>
+<script>
+    var container = $("#flexContainer");
+    var shopNum = 0;
+    var totalShops = 7;
+    var shopNames = ["secrets", "quest", "mapitems", "tinkers", "magni", "mage", "overlord"];
+    var arrayOfItemsPerShop = [11, 11, 18, 12, 12, 12, 12];
+    var itemIDGenerator = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven",
+        "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen"
+    ];
+    var itemCounter = 0;
+
+    //loops that generate the HTML structure for the page
+    for (shopNum; shopNum < totalShops; shopNum++) {
+        container.append("<div class = 'flexCol itemshops' id = " + shopNames[shopNum] + ">");
+        var id = $("#" + shopNames[shopNum]);
+        for (var j = -1; j < arrayOfItemsPerShop[shopNum]; j++) {
+            if (j == -1) {
+                id.append(" <div class = 'dropdown item shopImg " + shopNames[shopNum] + "' id= '" +
+                    shopNames[shopNum] + "'>");
+            } else {
+                id.append("<div class = 'dropdown item " + shopNames[shopNum] + " " +
+                    itemIDGenerator[j] +
+                    "' id= '" +
+                    shopNames[shopNum] + itemIDGenerator[j] +
+                    "'><!--dropdown appended--></div> <div class='modal' id='modal" + shopNames[
+                        shopNum] + itemIDGenerator[j] +
+                    "'> <div class='modal-content'> <span class='mname'>" + itemList[itemCounter] +
+                    "</span><div class='recipe' id='m" + shopNames[
+                        shopNum] + itemIDGenerator[j] +
+                    "'><!--item recipe appended--></div></div>"
+                );
+                itemCounter++;
+            };
+            container.append("</div>");
+        };
+    };
+
+    //function that opens and closes modals
+    $(".dropdown").click(function () {
+        $(".modal").css('display', 'none');
+        $("#modal" + $(this).attr('id')).css('display', 'block');
+        $(".modal").click(function () {
+            $(".modal").css('display', 'none');
+        });
+        $(".modal-content").click(function (e) {
+            e.stopPropagation();
+        });
+
+    });
+</script>
+
+
+<script src="dropdowns.js"></script>
+<script src="modalcontent.js"></script>
+
+</html>

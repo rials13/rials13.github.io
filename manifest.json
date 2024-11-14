@@ -1,0 +1,16 @@
+{
+    "name": "Moo Moo Items",
+    "short_name": "Moo Items",
+    "description": "Moo Moo GenX item index",
+    "display": "standalone",
+    "orientation": "landscape",
+    "background_color": "#251111",
+    "theme_color": "#333",
+    "icons": [
+        {
+        "src": "moomoo.jpg",
+        "sizes": "232x235",
+        "type": "image/jpg"
+        }
+    ]
+}

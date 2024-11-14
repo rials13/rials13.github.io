@@ -1,0 +1,17 @@
+things to change with the dota port:
+aerogun 
+3.16 item structure
+righteous assault using technotic
+ranged tree eater / barrel killer
+exorus warlock as an extension to sassys
+combine immunity necklace and volhynia (immunity, 50K life, 2 illusions)
+spells on bosses so magic immunity is better
+
+
+Knoll overseer - 11 seconds for 10 attacks
+Command aura +100% damage
+
+Purification banishes for 10 seconds
+
+
+Chain lightning 6 target !125 damage ~20%

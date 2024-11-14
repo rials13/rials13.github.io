@@ -1,0 +1,366 @@
+/* Non CRITICAL CSS for the webpage load - Modal and dropdown content here*/
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    max-width: 84px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+    /*display: none;*/
+    min-width: 300px;
+    position: absolute;
+    /*left: 75%;
+    top: -100%;*/
+    z-index: 1;
+    background-color: #2E3535;
+    border: 1px solid #F0BA17;
+    border-style: groove;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(2, 200, 240, 0.5);
+    font-family: "Veranda";
+    font-size: 1em;
+    color: #fff;
+    text-align: left;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.t {
+    top: -75%;
+}
+
+.b {
+    bottom: 0%
+}
+
+.l {
+    left: 100%;
+}
+
+.r {
+    right: 100%;
+}
+
+.dropdown-content-shop {
+    /*display: none;*/
+    white-space: nowrap;
+    position: absolute;
+    left: 0%;
+    top: -35%;
+    z-index: 1;
+    background-color: #2E3535;
+    border: 1px solid #F0BA17;
+    border-style: groove;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(2, 200, 240, 0.5);
+    font-family: "Veranda";
+    font-size: 1em;
+    color: #fff;
+    text-align: left;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropdown-content-shop {
+    display: block;
+}
+
+/* The Modal (background) */
+
+.modal {
+    /*display: none;*/
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    /*background-color: rgb(0, 0, 0);*/
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    -webkit-animation-name: fadeIn;
+    /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+/* Modal Content */
+
+.modal-content {
+    position: fixed;
+    bottom: 0;
+    left: 25vw;
+    background-color: #2E3535;
+    border: 1px solid #F0BA17;
+    border-style: groove;
+    border-radius: 10px;
+    font-family: "Veranda";
+    font-size: 1em;
+    color: #fff;
+    text-align: left;
+    padding-left: 5px;
+    padding-top: 5px;
+    width: 50vw;
+    min-height: 25vh;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+/* Add Animation to Modal fade in */
+
+@-webkit-keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+/* Modal content flexbox wrapper */
+
+.recipe {
+    float: left;
+    text-align: center;
+    width: calc(100% - 26px);
+}
+
+.top {
+    margin-bottom: 30px;
+    margin-top: -10px;
+    display: flex;
+    /*margin: 0 auto;*/
+    justify-content: center;
+}
+
+.mid {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    /*margin: 0 auto;*/
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.modalflex {
+    flex: 1;
+    flex-basis: 84px;
+    max-width: 84px;
+}
+
+.modalflex-map {
+    flex: 1;
+    flex-basis: 235px;
+    max-width: 235px;
+    padding: 1px;
+    /*margin-left: 26px;*/
+}
+
+.map {
+    flex: 1;
+    max-width: 100%;
+    border-radius: 13px;
+}
+
+.map:hover {
+    box-shadow: 0px 5px 5px 0px rgba(2, 200, 240, 0.5);
+}
+
+.text {
+    flex: 1;
+    margin-bottom: 30px;
+    font-family: "Veranda";
+    font-size: 1.2em;
+    color: #fff;
+    text-align: center;
+}
+
+/* Font coloring for stats box and other items */
+
+.black {
+    color: #000000;
+}
+
+.gold,
+.lclick,
+.souls,
+.ill {
+    color: #FED312;
+}
+
+.shop {
+    color: #808080;
+}
+
+.info {
+    color: #626262;
+}
+
+.damage,
+.damagereturn {
+    color: #FF4646;
+}
+
+.armor {
+    color: #BAB780;
+}
+
+.allstats,
+.attackspd,
+.enchdmg,
+.active,
+.passive,
+.buffs,
+.movespd,
+.evasion,
+.cleave,
+.crit,
+.chance,
+.enemy,
+.resist,
+.lifeabsorb,
+.lifereturn,
+.notes {
+    color: #9ACBD6;
+}
+
+.plusstats,
+.mstun,
+.lifereturn2,
+.manareturn2 {
+    color: #E68E35;
+}
+
+.str {
+    color: #CC8394;
+}
+
+.agi {
+    color: #ACE8B5;
+}
+
+.int {
+    color: #1A7BE2;
+}
+
+.lifebonus,
+.hp,
+.regen {
+    color: #CDE672;
+}
+
+.manaregen,
+.mp {
+    color: #BAA2E0;
+}
+
+.cooldown,
+.mana,
+.soul,
+.stackrep {
+    color: #67B5C5;
+}
+
+.cooldown1 {
+    color: #6E6F9B;
+}
+
+.lifesteal {
+    color: #F5B0F1;
+}
+
+.nostack,
+.note,
+.dd {
+    color: #FF0303;
+}
+
+.lvlup {
+    color: #39CC1B;
+}
+
+.regenrune,
+.haste {
+    color: #11149F;
+}
+
+.tpix {
+    width: 30px;
+    border-radius: 3px;
+}
+
+.modal-item-name {
+    color: #fff;
+    font-size: 2em;
+}
+
+.cost {
+    color: #fff;
+    font-size: 1em;
+    float: left;
+}
+
+.wave {
+    font-size: 1.2em;
+    color: aqua;
+    font-style: italic;
+}
